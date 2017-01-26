@@ -56,7 +56,7 @@ public class RestApiController {
 		return new ResponseEntity<List<Shop>>(shopList, HttpStatus.OK);
 	}
 
-    @RequestMapping(value = "/nearByShop/", method = RequestMethod.GET)
+    @RequestMapping(value = "/nearByShop/", method = RequestMethod.POST)
     public ResponseEntity<List<Shop>> getNearByShop(@RequestBody CustomerLocation location) {
         logger.info("Fetching all shops");
         List<Shop> shopList = shopService.getNearestShopsForCustomer(location);
