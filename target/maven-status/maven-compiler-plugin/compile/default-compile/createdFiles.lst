@@ -1,12 +1,9 @@
-com\javachallenge\springboot\service\UserServiceImpl.class
-com\javachallenge\springboot\service\ShopService.class
-com\javachallenge\springboot\service\GoogleService.class
-com\javachallenge\springboot\service\UserService.class
-com\javachallenge\springboot\model\Shop.class
 com\javachallenge\springboot\SpringBootRestApiApp.class
 com\javachallenge\springboot\util\CustomErrorType.class
+com\javachallenge\springboot\service\ShopService.class
+com\javachallenge\springboot\service\GoogleService.class
 com\javachallenge\springboot\controller\RestApiController.class
-com\javachallenge\springboot\model\User.class
+com\javachallenge\springboot\model\Shop.class
 com\javachallenge\springboot\service\GoogleServiceImpl.class
 com\javachallenge\springboot\util\AddShopRequest.class
 com\javachallenge\springboot\service\ShopServiceImpl.class
