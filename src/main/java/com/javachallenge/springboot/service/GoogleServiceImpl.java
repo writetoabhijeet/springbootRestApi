@@ -26,7 +26,13 @@ public class GoogleServiceImpl implements GoogleService {
 
     private static final String SPACE=" ";
 
-
+    /**
+     * This method accept the shop object and call the google map api to get the lat long values
+     * for the provided pincode object. Imp.Note : pincode is compulsory else service not get
+     * the lat lon values for the shop.
+     *
+     * @param shop : Object of type SHOP
+     */
     @Override
     public void setLatLongForShop(Shop shop) {
         try {
@@ -38,6 +44,7 @@ public class GoogleServiceImpl implements GoogleService {
         }
 
     }
+
 
     private String[] getLatLongPositions(String address) throws Exception
     {

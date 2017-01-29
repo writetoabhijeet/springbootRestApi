@@ -20,6 +20,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
+/**
+ * Controller class to add ashop info to the application. Also find the nearest shop
+ * depending upon the customer location
+ */
 @RestController
 @RequestMapping("/api")
 public class RestApiController {
@@ -33,6 +37,13 @@ public class RestApiController {
 	@Autowired
 	GoogleService googleService;
 
+	/**
+	 * This method is used to add shop data to the application
+	 *
+	 * @param request   Object of type shop ,w hich hold the all shop information
+	 * @param ucBuilder
+	 * @return HTTP response
+	 */
 	@RequestMapping(value = "/shop/", method = RequestMethod.POST)
 	public ResponseEntity<Void> addShop(@RequestBody AddShopRequest request, UriComponentsBuilder ucBuilder) {
 		logger.info("Request landed");
@@ -45,6 +56,10 @@ public class RestApiController {
 
 	}
 
+	/**
+	 * This method is used to get all the avaiable shop stored in the application
+	 * @return List of shop
+	 */
 	@RequestMapping(value = "/allshops/", method = RequestMethod.GET)
 	public ResponseEntity<List<Shop>> getAllShop() {
 		logger.info("Fetching all shops");
@@ -56,6 +71,11 @@ public class RestApiController {
 		return new ResponseEntity<List<Shop>>(shopList, HttpStatus.OK);
 	}
 
+	/**
+	 * This method used to find the neareset location depending uponthe available shop database.
+	 * @param location Object which hold lat lon value of the customer.
+	 * @return
+	 */
     @RequestMapping(value = "/nearByShop/", method = RequestMethod.POST)
     public ResponseEntity<List<Shop>> getNearByShop(@RequestBody CustomerLocation location) {
         logger.info("Fetching all shops");
