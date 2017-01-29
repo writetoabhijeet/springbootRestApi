@@ -12,6 +12,8 @@ import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
+ * Servvice class method for shop object
+ *
  * Created by USER on 26-01-2017.
  */
 @Service("shopService")
@@ -30,17 +32,31 @@ public class ShopServiceImpl implements ShopService {
 
     }
 
+    /**
+     * This method save the shop object to the application memory
+     *
+     * @param shop Object
+     */
     @Override
     public void saveShop(Shop shop) {
         shop.setId(counter.incrementAndGet());
         shops.add(shop);
     }
 
+    /**
+     * This method provide all the available shops with the applciation memory
+     * @return List of shop
+     */
     @Override
     public List<Shop> findAllShop() {
         return shops;
     }
 
+    /**
+     * This method provide the nearest shop available near to the customer location
+     * @param location Object which hold lat lon vlaues.
+     * @return List of shop
+     */
     @Override
     public List<Shop> getNearestShopsForCustomer(CustomerLocation location) {
 
