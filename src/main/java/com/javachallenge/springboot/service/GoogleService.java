@@ -7,7 +7,5 @@ import com.javachallenge.springboot.model.Shop;
  */
 public interface GoogleService {
 
-     String[] getLatLongPositions(String address) throws Exception;
-
     void setLatLongForShop(Shop shop);
 }
