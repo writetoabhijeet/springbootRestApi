@@ -42,7 +42,7 @@ public class ShopServiceImplTest {
         buildShopDatabase();
         List<Shop> result = shopService.findAllShop();
         Assert.assertNotNull(result);
-        Assert.assertEquals("Available number of shops must be 3", 3, result.size());
+        Assert.assertEquals("Available number of shops must be 4", 4, result.size());
 
     }
 
