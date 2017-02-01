@@ -51,7 +51,7 @@ public class RestApiController {
         googleService.setLatLongForShop(shop);
         shopService.saveShop(shop);
 		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(shop.getId()).toUri());
+		headers.setLocation(ucBuilder.path("/shop/{id}").buildAndExpand(shop.getId()).toUri());
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 
 	}
